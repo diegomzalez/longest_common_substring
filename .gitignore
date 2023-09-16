@@ -1,0 +1,22 @@
+# Compiled binaries
+bin/
+
+# Object files
+obj/
+
+# Temporary files created by editors
+*.swp
+*.swo
+
+# Files created by the operating system
+.DS_Store
+Thumbs.db
+
+# Build output directory (if you decide to have one in the future)
+build/
+
+# Any other dependency directories or files you may add in the future
+# deps/
+
+# Visual Studio configs
+.vscode
