@@ -5,29 +5,21 @@
 
 int longest_common_substring(const char *word_to_check, const char *word_to_compare)
 {
-    int height = strlen(word_to_check);
-    int width = strlen(word_to_compare);
+    size_t height = strlen(word_to_check);
+    size_t width = strlen(word_to_compare);
 
     int **grid = malloc(height * sizeof(int *));
 
     int max_length = 0;
 
-    for (int i = 0; i < height; i++)
+    for (size_t i = 0; i < height; i++)
     {
-        grid[i] = malloc(width * sizeof(int));
+        grid[i] = calloc(width, sizeof(int));
     }
 
-    for (int i = 0; i < height; i++)
+    for (size_t i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
-        {
-            grid[i][j] = 0;
-        }
-    }
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
+        for (size_t j = 0; j < width; j++)
         {
             int length = 0;
             if (word_to_check[i] == word_to_compare[j])
@@ -44,7 +36,7 @@ int longest_common_substring(const char *word_to_check, const char *word_to_comp
         }
         printf("\n");
     }
-    for (int i = 0; i < height; i++)
+    for (size_t i = 0; i < height; i++)
     {
         free(grid[i]);
     }
